@@ -1,0 +1,21 @@
+.simple-appointment-card {
+  background-color: #f8f9fb;
+  border-left: 4px solid #36cfc9;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.simple-appointment-card h5 {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.simple-appointment-card span {
+  font-size: 13px;
+  color: #888;
+}
