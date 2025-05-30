@@ -1,5 +1,11 @@
-export const calendarAppointments = [
-  { day: 'Tue', date: 26, slots: ['09:00'], selected: true },
-  { day: 'Thu', date: 28, slots: ['11:00'] },
-  { day: 'Sat', date: 30, slots: ['12:00'] },
+
+
+export const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+export const dates = ['25', '26', '27', '28', '29', '30', '31'];
+
+export const times = [
+  ['10:00', '08:00', '12:00', '10:00', '—', '12:00', '10:00'],
+  ['11:00', '09:00', '—', '13:00', '14:00', '14:00', '10:00'],
+  ['12:00', '10:00', '13:00', '—', '16:00', '15:00', '11:00']
 ];

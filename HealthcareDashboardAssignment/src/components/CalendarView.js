@@ -1,15 +1,8 @@
 import React from 'react';
 import '../styles/CalendarView.css';
+import { days, dates, times } from '../data/calendarAppointments'; // Adjust path as needed
 
 function CalendarView() {
-  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-  const dates = ['25', '26', '27', '28', '29', '30', '31'];
-  const times = [
-    ['10:00', '08:00', '12:00', '10:00', '—', '12:00', '10:00'],
-    ['11:00', '09:00', '—', '13:00', '14:00', '14:00', '10:00'],
-    ['12:00', '10:00', '13:00', '—', '16:00', '15:00', '11:00']
-  ];
-
   return (
     <section className="calendar-section">
       <h3>October 2021</h3>

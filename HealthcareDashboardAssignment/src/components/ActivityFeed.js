@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/ActivityFeed.css';
+import activityData from '../data/activityData'; 
 
 const ActivityFeed = () => {
-  const activityData = [80, 50, 70, 40, 60, 90, 30]; // Example data
   return (
     <div className="activity-feed">
       <h3>Activity</h3>

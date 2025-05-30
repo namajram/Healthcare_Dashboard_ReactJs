@@ -1,8 +1,12 @@
+/* Default: Desktop view */
 .sidebar {
   width: 220px;
   background-color: #ffffff;
   padding: 20px;
   border-right: 1px solid #ccc;
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
 .sidebar-title {
@@ -29,4 +33,59 @@
 
 .nav-item:hover {
   background-color: #f0f0f0;
+}
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 180px;
+    padding: 16px;
+  }
+
+  .sidebar-title {
+    font-size: 16px;
+  }
+
+  .nav-item {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+}
+
+/* Phone (≤768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    left: -220px; /* hidden by default */
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .nav-item {
+    font-size: 14px;
+  }
+}
+
+/* Small Phone (≤480px) */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 180px;
+  }
+
+  .nav-item {
+    font-size: 13px;
+  }
 }

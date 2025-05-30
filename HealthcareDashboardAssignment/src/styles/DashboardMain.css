@@ -1,5 +1,4 @@
-/* DashboardMain.css */
-
+/* Dashboard container - Desktop default */
 .dashboard-main {
   flex: 1;
   padding: 2rem;
@@ -14,26 +13,49 @@
   font-weight: 600;
 }
 
-/* Responsive adjustments */
+/* Section layout wrapper */
+.dashboard-sections {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Tablet - up to 1024px */
 @media (max-width: 1024px) {
   .dashboard-main {
     padding: 1.5rem;
   }
+
+  .dashboard-sections {
+    gap: 1.5rem;
+  }
 }
 
+/* Tablet/Phone - up to 768px */
 @media (max-width: 768px) {
   .dashboard-main {
     padding: 1rem;
   }
-  
+
   .dashboard-main h2 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
   }
+
+  .dashboard-sections {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 
+/* Phone - up to 480px */
 @media (max-width: 480px) {
   .dashboard-main {
     padding: 0.8rem;
+  }
+
+  .dashboard-main h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
   }
 }

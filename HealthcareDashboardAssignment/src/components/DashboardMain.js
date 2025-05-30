@@ -8,9 +8,11 @@ function DashboardMain() {
   return (
     <main className="dashboard-main">
       <h2>Dashboard</h2>
-      <ActivitySection />
-      <CalendarView />
-      <UpcomingSchedule />
+      <div className="dashboard-sections">
+        <ActivitySection />
+        <CalendarView />
+        <UpcomingSchedule />
+      </div>
     </main>
   );
 }

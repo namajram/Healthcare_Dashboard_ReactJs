@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.3s ease;
 }
 
 .simple-appointment-card h5 {
@@ -18,4 +19,52 @@
 .simple-appointment-card span {
   font-size: 13px;
   color: #888;
+}
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .simple-appointment-card {
+    padding: 10px 14px;
+  }
+
+  .simple-appointment-card h5 {
+    font-size: 13px;
+  }
+
+  .simple-appointment-card span {
+    font-size: 12px;
+  }
+}
+
+/* Phone (≤768px) */
+@media (max-width: 768px) {
+  .simple-appointment-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 10px 12px;
+  }
+
+  .simple-appointment-card h5 {
+    font-size: 13px;
+  }
+
+  .simple-appointment-card span {
+    font-size: 12px;
+  }
+}
+
+/* Small Phone (≤480px) */
+@media (max-width: 480px) {
+  .simple-appointment-card {
+    padding: 8px 10px;
+  }
+
+  .simple-appointment-card h5 {
+    font-size: 12px;
+  }
+
+  .simple-appointment-card span {
+    font-size: 11px;
+  }
 }

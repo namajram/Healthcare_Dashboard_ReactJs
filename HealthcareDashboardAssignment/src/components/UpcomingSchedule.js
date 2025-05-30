@@ -1,40 +1,40 @@
+// src/components/UpcomingSchedule.jsx
 import React from 'react';
+import scheduleData from '../data/scheduleData';
 import '../styles/UpcomingSchedule.css';
 
 function UpcomingSchedule() {
   return (
     <section className="upcoming-schedule">
       <h3>The Upcoming Schedule</h3>
-      <div className="schedule-day">
-        <h4>On Thursday</h4>
-        <div className="appointment-card">
-          <div className="appointment-content">
-            <strong>Health checkup complete</strong>
-            <span>11:00 AM</span>
-          </div>
+      {scheduleData.map(({ date, parts }) => (
+        <div className="schedule-day" key={date}>
+          <h4>On {date}</h4>
+          {parts.map(({ partName, appointments }) => (
+            <div className="schedule-part" key={partName}>
+              <h5>{partName}</h5>
+              {appointments.map(({ company, time }, idx) => {
+                const companyParts = company.split(' ');
+
+                return (
+                  <div className="appointment-card" key={idx}>
+                    <div className="appointment-content">
+                      <div className="company-name">
+                        {companyParts.map((part, i) => (
+                          <span className="company-part" key={i}>
+                            {part}
+                          </span>
+                        ))}
+                      </div>
+                      <span className="appointment-time">{time}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ))}
         </div>
-        <div className="appointment-card">
-          <div className="appointment-content">
-            <strong>Ophthalmologist</strong>
-            <span>14:00 PM</span>
-          </div>
-        </div>
-      </div>
-      <div className="schedule-day">
-        <h4>On Saturday</h4>
-        <div className="appointment-card">
-          <div className="appointment-content">
-            <strong>Cardiologist</strong>
-            <span>12:00 AM</span>
-          </div>
-        </div>
-        <div className="appointment-card">
-          <div className="appointment-content">
-            <strong>Neurologist</strong>
-            <span>16:00 PM</span>
-          </div>
-        </div>
-      </div>
+      ))}
     </section>
   );
 }

@@ -1,3 +1,4 @@
+/* Desktop (default) */
 .activity-feed {
   background-color: #ffffff;
   border-radius: 12px;
@@ -23,4 +24,74 @@
   flex: 1;
   background-color: #69c0ff;
   border-radius: 6px 6px 0 0;
+}
+
+/* Tablet (≤1024px) - compress sidebar, adjust feed */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 80px; /* Example compressed sidebar width */
+    transition: width 0.3s ease;
+  }
+  
+  .activity-feed {
+    padding: 15px;
+  }
+
+  .activity-feed h3 {
+    font-size: 16px;
+  }
+
+  .bar-chart {
+    gap: 8px;
+    height: 100px;
+  }
+}
+
+/* Mobile (≤768px) - hide sidebar, stack bar chart vertically if needed */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .activity-feed {
+    padding: 15px 10px;
+  }
+
+  .activity-feed h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  /* Stack bars vertically or keep horizontal with scroll */
+  .bar-chart {
+    flex-direction: column;
+    height: auto;
+    gap: 6px;
+    padding: 0;
+  }
+
+  .bar {
+    width: 100%;
+    height: 20px; /* fixed height for vertical bars */
+    border-radius: 6px;
+  }
+}
+
+/* Small Mobile (≤480px) - keep sidebar hidden, compact feed */
+@media (max-width: 480px) {
+  .sidebar {
+    display: none;
+  }
+
+  .activity-feed {
+    padding: 12px 8px;
+  }
+
+  .activity-feed h3 {
+    font-size: 14px;
+  }
+
+  .bar {
+    height: 16px;
+  }
 }

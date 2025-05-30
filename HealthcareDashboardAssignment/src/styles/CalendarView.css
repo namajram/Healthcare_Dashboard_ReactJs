@@ -4,16 +4,19 @@
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  overflow-x: auto; /* ensures horizontal scroll on small screens */
 }
 
 .calendar-section h3 {
   margin-top: 0;
   color: #2c3e50;
+  font-size: 1.4rem;
 }
 
 .calendar-table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 600px; /* ensures table isn't squished on smaller screens */
 }
 
 .calendar-table th,
@@ -21,6 +24,7 @@
   padding: 10px;
   text-align: center;
   border-bottom: 1px solid #eee;
+  white-space: nowrap;
 }
 
 .calendar-table th {
@@ -34,4 +38,57 @@
 
 .calendar-table tr:first-child td {
   font-weight: bold;
+}
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .calendar-section {
+    padding: 16px;
+  }
+
+  .calendar-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .calendar-table th,
+  .calendar-table td {
+    padding: 8px;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .calendar-section {
+    padding: 12px;
+  }
+
+  .calendar-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .calendar-table {
+    min-width: unset;
+    font-size: 14px;
+  }
+
+  .calendar-table th,
+  .calendar-table td {
+    padding: 6px;
+  }
+}
+
+/* Small Phone (≤480px) */
+@media (max-width: 480px) {
+  .calendar-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .calendar-table {
+    font-size: 12px;
+  }
+
+  .calendar-table th,
+  .calendar-table td {
+    padding: 4px;
+  }
 }
